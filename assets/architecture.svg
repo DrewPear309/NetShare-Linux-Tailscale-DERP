@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+<title id="title">NetShare Tailscale architecture</title>
+<desc id="desc">Two operating modes: NetShare mode through a phone or tablet using HTTP CONNECT, local DNS over HTTPS, and Tailscale DERP; and normal mode using ordinary Tailscale directly.</desc>
+<defs>
+  <style>
+    .bg{fill:#0b1220}.panel{fill:#111827;stroke:#334155;stroke-width:2}.txt{fill:#e5e7eb;font-family:Inter,Segoe UI,Arial,sans-serif}.muted{fill:#94a3b8;font-family:Inter,Segoe UI,Arial,sans-serif}.cyan{stroke:#22d3ee}.purple{stroke:#a78bfa}.green{stroke:#34d399}.line{fill:none;stroke-width:4;stroke-linecap:round}
+  </style>
+  <marker id="arrowC" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#22d3ee"/></marker>
+  <marker id="arrowP" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1100" height="620" rx="28" class="bg"/>
+
+<text x="55" y="65" class="txt" font-size="34" font-weight="800">Two clean operating modes</text>
+
+<!-- NetShare mode -->
+<rect x="45" y="95" width="1010" height="260" rx="24" class="panel"/>
+<text x="75" y="135" class="txt" font-size="24" font-weight="700">NetShare mode</text>
+<text x="75" y="165" class="muted" font-size="16">Phone or tablet stays with the desktop and provides the proxy path.</text>
+
+<g>
+  <rect x="80" y="210" width="165" height="88" rx="16" class="panel"/>
+  <text x="162" y="244" text-anchor="middle" class="txt" font-size="18" font-weight="700">Android</text>
+  <text x="162" y="269" text-anchor="middle" class="muted" font-size="15">NetShare :8282</text>
+
+  <rect x="315" y="210" width="180" height="88" rx="16" class="panel"/>
+  <text x="405" y="244" text-anchor="middle" class="txt" font-size="18" font-weight="700">Linux desktop</text>
+  <text x="405" y="269" text-anchor="middle" class="muted" font-size="15">Firefox + tailscaled</text>
+
+  <rect x="565" y="210" width="180" height="88" rx="16" class="panel"/>
+  <text x="655" y="244" text-anchor="middle" class="txt" font-size="18" font-weight="700">Local DoH bridge</text>
+  <text x="655" y="269" text-anchor="middle" class="muted" font-size="15">DNS over HTTP proxy</text>
+
+  <rect x="815" y="210" width="165" height="88" rx="16" class="panel"/>
+  <text x="897" y="244" text-anchor="middle" class="txt" font-size="18" font-weight="700">Tailscale</text>
+  <text x="897" y="269" text-anchor="middle" class="muted" font-size="15">DERP → VPS</text>
+
+  <path d="M245 254 H315" class="line cyan" marker-end="url(#arrowC)"/>
+  <path d="M495 254 H565" class="line cyan" marker-end="url(#arrowC)"/>
+  <path d="M745 254 H815" class="line cyan" marker-end="url(#arrowC)"/>
+</g>
+
+<text x="75" y="330" class="muted" font-size="15">Expected: UDP=false, peer path relayed through DERP, SSH still works over the tailnet.</text>
+
+<!-- Normal mode -->
+<rect x="45" y="385" width="1010" height="180" rx="24" class="panel"/>
+<text x="75" y="425" class="txt" font-size="24" font-weight="700">Normal network mode</text>
+<text x="75" y="455" class="muted" font-size="16">Run taildown.sh and let Tailscale return to the host's ordinary network path.</text>
+
+<rect x="125" y="485" width="190" height="55" rx="14" class="panel"/>
+<text x="220" y="519" text-anchor="middle" class="txt" font-size="17">Linux desktop</text>
+<rect x="455" y="485" width="190" height="55" rx="14" class="panel"/>
+<text x="550" y="519" text-anchor="middle" class="txt" font-size="17">Normal Tailscale</text>
+<rect x="785" y="485" width="190" height="55" rx="14" class="panel"/>
+<text x="880" y="519" text-anchor="middle" class="txt" font-size="17">VPS / peers</text>
+
+<path d="M315 512 H455" class="line purple" marker-end="url(#arrowP)"/>
+<path d="M645 512 H785" class="line purple" marker-end="url(#arrowP)"/>
+</svg>

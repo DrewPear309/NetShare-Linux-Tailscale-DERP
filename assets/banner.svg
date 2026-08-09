@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">NetShare × Tailscale Bridge</title>
+  <desc id="desc">Android phone or tablet providing NetShare to a Linux desktop, which reaches Tailscale peers through a proxy-aware DNS bridge and DERP relay.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="1080" cy="70" r="110" fill="#22d3ee" opacity=".07"/>
+  <circle cx="112" cy="345" r="140" fill="#8b5cf6" opacity=".08"/>
+
+  <text x="70" y="92" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="800" fill="#f8fafc">
+    NetShare × Tailscale
+  </text>
+  <text x="70" y="138" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" fill="#cbd5e1">
+    Android phone/tablet → Linux → DERP → private VPS access
+  </text>
+
+  <!-- Phone/Tablet -->
+  <g transform="translate(85 205)">
+    <rect x="0" y="0" width="165" height="115" rx="18" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+    <rect x="18" y="17" width="54" height="80" rx="10" fill="#172033" stroke="#67e8f9" stroke-width="2"/>
+    <circle cx="45" cy="88" r="3" fill="#67e8f9"/>
+    <rect x="88" y="24" width="56" height="68" rx="8" fill="#172033" stroke="#67e8f9" stroke-width="2"/>
+    <text x="82" y="135" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#e2e8f0">Phone / Tablet</text>
+    <text x="82" y="158" text-anchor="middle" font-family="monospace" font-size="14" fill="#67e8f9">NetShare :8282</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g stroke="url(#accent)" stroke-width="4" fill="none" filter="url(#glow)">
+    <path d="M270 262 H380"/>
+    <path d="M367 251 L380 262 L367 273"/>
+  </g>
+
+  <!-- Linux -->
+  <g transform="translate(395 205)">
+    <rect x="0" y="0" width="190" height="115" rx="18" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="26" y="22" width="138" height="65" rx="8" fill="#111827" stroke="#c4b5fd" stroke-width="2"/>
+    <rect x="75" y="92" width="40" height="6" rx="3" fill="#c4b5fd"/>
+    <text x="95" y="135" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#e2e8f0">Linux Desktop</text>
+    <text x="95" y="158" text-anchor="middle" font-family="monospace" font-size="14" fill="#c4b5fd">DoH + tailscaled</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g stroke="url(#accent)" stroke-width="4" fill="none" filter="url(#glow)">
+    <path d="M605 262 H715"/>
+    <path d="M702 251 L715 262 L702 273"/>
+  </g>
+
+  <!-- DERP -->
+  <g transform="translate(730 205)">
+    <rect x="0" y="0" width="170" height="115" rx="18" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="85" cy="45" r="27" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="2"/>
+    <circle cx="67" cy="42" r="5" fill="#e0f2fe"/>
+    <circle cx="103" cy="42" r="5" fill="#e0f2fe"/>
+    <circle cx="85" cy="62" r="5" fill="#e0f2fe"/>
+    <path d="M72 46 L81 58 M98 46 L89 58 M72 42 H98" stroke="#e0f2fe" stroke-width="2"/>
+    <text x="85" y="135" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#e2e8f0">Tailscale DERP</text>
+    <text x="85" y="158" text-anchor="middle" font-family="monospace" font-size="14" fill="#7dd3fc">encrypted relay</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g stroke="url(#accent)" stroke-width="4" fill="none" filter="url(#glow)">
+    <path d="M920 262 H1030"/>
+    <path d="M1017 251 L1030 262 L1017 273"/>
+  </g>
+
+  <!-- VPS -->
+  <g transform="translate(1040 205)">
+    <rect x="0" y="0" width="105" height="115" rx="18" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="24" y="22" width="57" height="22" rx="5" fill="#064e3b" stroke="#6ee7b7"/>
+    <rect x="24" y="52" width="57" height="22" rx="5" fill="#064e3b" stroke="#6ee7b7"/>
+    <circle cx="70" cy="33" r="3" fill="#a7f3d0"/>
+    <circle cx="70" cy="63" r="3" fill="#a7f3d0"/>
+    <text x="52" y="135" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#e2e8f0">VPS</text>
+    <text x="52" y="158" text-anchor="middle" font-family="monospace" font-size="14" fill="#6ee7b7">SSH / dev</text>
+  </g>
+
+  <rect x="70" y="382" width="1060" height="28" rx="14" fill="#0f172a" stroke="#334155"/>
+  <text x="600" y="402" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#cbd5e1">
+    Reversible local scripts • No VPS changes • Phone or tablet host • Normal hotspot fallback
+  </text>
+</svg>
